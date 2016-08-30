@@ -29,3 +29,5 @@ test:
 production:
   <<: *default
   database: chit_chat_production
+  username: deploy
+  password: <%= ENV['CHIT_CHAT_DATABASE_PASSWORD'] %>
