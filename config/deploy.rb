@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.4.0'
+lock '3.4.1'
 
 set :application, 'chit_chat'
 set :repo_url, 'git@github.com:BryanRunner/chit-chat.git'

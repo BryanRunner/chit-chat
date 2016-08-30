@@ -1,6 +1,4 @@
 set :stage, :production
-set :branch, 'master'
-set :rails_env, 'production'
 
 # Extended Server Syntax
 # ======================
@@ -10,7 +8,6 @@ set :rails_env, 'production'
 # extended properties on the server.
 
 server '45.55.27.214', user: 'deploy', roles: %w{web app db}
-set :deploy_to, '/home/deploy/chit-chat'
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
