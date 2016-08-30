@@ -1,0 +1,15 @@
+<div class="site-wrapper">
+
+  <%= render 'shared/masthead' %>
+  <%= render 'shared/flash_msg' %>
+
+  <div class="container-full">
+    <div class="content-wrapper">
+      <%= render "shared/side_bar" %>
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+</div>

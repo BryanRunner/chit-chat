@@ -1,0 +1,25 @@
+<div class="wrap">
+  <% if @user_chats.empty? && @public_chats.empty? %>
+    <h1>There are no chats!</h1>
+  <% else %>
+    <h3>Your Chats</h3>
+    <table class="chats-list">
+        <% @user_chats.each do |chat| %>
+        <tr class="chat-list">
+          <td><%= link_to chat.name, chat_path(chat) %></td>
+        </tr>
+        <% end %>
+      <tr><td></td></tr>
+    </table>
+
+    <h3>Public Chats</h3>
+    <table class="chats-list">
+        <% @public_chats.each do |chat| %>
+        <tr class="chat-list">
+          <td><%= link_to chat.name, chat_path(chat) %></td>
+        </tr>
+        <% end %>
+      <tr><td></td></tr>
+    </table>
+  <% end %>
+</div>

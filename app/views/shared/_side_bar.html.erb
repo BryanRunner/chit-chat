@@ -1,0 +1,8 @@
+<div class="side-bar">
+  <h3><%= current_user.username %></h3>
+  <ul class="side-group">
+    <li class="group-item">
+      <%= link_to "Create Chat", new_user_chat_path(current_user) %>
+    </li>
+  </ul>
+</div>

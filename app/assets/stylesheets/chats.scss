@@ -1,0 +1,87 @@
+.container-full {
+  @include make-container($gutter: 0);
+  height: calc(100vh - 6.25rem);
+}
+
+.content-wrapper {
+  @include make-row($gutter: 0);
+  height: 100%;
+}
+
+.side-bar {
+  @include make-col-ready(2, $gutter: 0);
+  @include make-col(2, $gutter: 0);
+  background: #eee;
+  color: #555;
+  height: 100%;
+  padding: 2rem 0 0 2rem;
+  border-right: solid 1px #ddd;
+}
+
+.content {
+  @include make-col-ready(10, $gutter: 0);
+  @include make-col(10, $gutter: 0);
+  background: #fafafa;
+  height: 100%;
+  color: #555;
+}
+
+.wrap {
+  padding: 2rem;
+}
+
+.row-ng {
+  @include make-row($gutter: 0);
+}
+
+.col-md-6-ng {
+  @include make-col-ready(6, $gutter: 0);
+  @include make-col(12, $gutter: 0);
+  @include media-breakpoint-up(md) {
+    @include make-col(6, $gutter: 0);
+  }
+}
+
+.chats-list {
+  @extend .table;
+  // @extend .table-reflow;
+  width: 100%;
+}
+
+.chat-list {
+  width: 100%;
+}
+
+.chat-wrap {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.chat-header {
+  padding: 0.75rem;
+  border-bottom: solid 1px #ddd;
+  color: #aaa;
+}
+
+.input-wrap {
+  margin-top: 1rem;
+  padding: 0 1rem 0 1rem;
+}
+
+#messages {
+  padding: 1rem;
+  // background: #fff;
+  height: 100%;
+  // border: solid 1px #ddd;
+  overflow: scroll;
+  p {
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+    font-size: 0.95em;
+  }
+}
+
+#message_content {
+  resize: none;
+}

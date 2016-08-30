@@ -1,0 +1,29 @@
+<div class="wrap">
+  <div class="row-ng">
+    <div class="col-md-6-ng">
+
+      <h1>Create New Chat</h1>
+
+      <%= form_for :chat, url: user_chats_path(current_user) do |f| %>
+      <%# render "shared/errors", object:  %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+
+        <div class="form-check">
+          <%= f.label :public, class: "form-check-label" do %>
+            <%= f.check_box :public, class: "form-check-input" %>
+            Make Chat Public?
+          <% end %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "Create", class: "btn btn-success" %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

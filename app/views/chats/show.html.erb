@@ -1,0 +1,13 @@
+<div class="chat-wrap">
+  <div class="chat-header">
+    <h4><%= @chat.name %></h4>
+  </div>
+
+  <div id="messages">
+    <% if @chat.messages.any? %>
+        <%= render partial: 'messages/message', collection: @chat.messages %>
+    <% end %>
+  </div>
+
+  <%= render partial: 'messages/message_form', locals: { message: @message, chat: @chat } %>
+</div>

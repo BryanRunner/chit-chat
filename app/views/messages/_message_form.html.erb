@@ -1,0 +1,14 @@
+<div class="input-wrap">
+  <%=form_for message, remote: true, authenticity_token: true do |f| %>
+
+    <div class="form-group">
+      <%= f.text_area :content, rows: "1", autofocus: "true", class: "form-control", data: { textarea: "message" } %>
+    </div>
+
+    <div class="form-group">
+      <%= f.hidden_field :chat_id, value: @chat.id %>
+      <%= f.submit "Send", type: "hidden", class: "btn btn-primary", data: { send: "message" } %>
+    </div>
+
+  <%end%>
+</div>
