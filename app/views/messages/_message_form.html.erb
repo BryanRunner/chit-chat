@@ -2,7 +2,7 @@
   <%=form_for message, remote: true, authenticity_token: true do |f| %>
 
     <div class="form-group">
-      <%= f.text_area :content, rows: "1", autofocus: "true", class: "form-control", data: { textarea: "message" } %>
+      <%= f.text_area :content, id: "msg-form", rows: "1", autofocus: "true", class: "form-control", data: { textarea: "message" } %>
     </div>
 
     <div class="form-group">

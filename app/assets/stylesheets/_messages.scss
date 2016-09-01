@@ -1,0 +1,33 @@
+%msg-shared-styles {
+  margin: 0;
+  line-height: 1.2;
+  font-size: 0.95em;
+}
+
+#messages {
+  padding: 1rem;
+  height: 100%;
+  overflow: scroll;
+}
+
+#msg-form {
+  resize: none;
+}
+
+.msg {
+  margin-bottom: 0.75rem;
+}
+
+.msg-user {
+  @extend %msg-shared-styles;
+  font-weight: bold;
+}
+
+.msg-content {
+  @extend %msg-shared-styles;
+  color: #777;
+}
+
+.msg-line {
+  display: block;
+}
