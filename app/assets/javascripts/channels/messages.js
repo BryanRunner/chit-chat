@@ -1,45 +1,39 @@
 App.messages = App.cable.subscriptions.create('MessagesChannel', {
   received: function(data) {
-    var $msgs = $('#messages');
-    $msgs.append(this.renderMessage(data));
-    this.resetMsgContent();
-    this.scrollMsgBottom($msgs);
+    this.$messages = $('#messages');
+    this.$messages.append(this.renderMessage(data));
+    this.resetMessageForm();
+    this.scrollMessageBottom();
   },
 
   renderMessage: function(data) {
-    var div = document.createElement('div');
-    var user = document.createElement('p');
-    var msgContent = document.createElement('p');
-    var msg = data.message.split("\n");
+    var div     = this.makeElement('div', 'msg'),
+        user    = this.makeElement('p', 'msg-user', data.user),
+        content = this.makeElement('p', 'msg-content'),
+        msgData = data.message.split("\n");
 
-    user.className = "msg-user";
-    user.appendChild(document.createTextNode(data.user));
-
-    msgContent.className = "msg-content";
-
-    msg.forEach(function(line){
-      msgContent.appendChild(App.messages.createMsgContent('span', 'msg-line', line));
+    msgData.forEach(function(line){
+      content.appendChild(App.messages.makeElement('span', 'msg-line', line));
     });
 
-    div.className = "msg";
     div.appendChild(user);
-    div.appendChild(msgContent);
+    div.appendChild(content);
 
-    return div
+    return div;
   },
 
-  createMsgContent: function(tag, className, text){
-    var element = document.createElement(tag);
-    element.className = className;
+  makeElement: function(tag, className, text){
+    var el = document.createElement(tag);
+    el.className = className;
 
     if (text) {
-      var textNode = document.createTextNode(text);
-      element.appendChild(textNode);
+      var t = document.createTextNode(text);
+      el.appendChild(t);
     }
-    return element
+    return el;
   },
 
-  resetMsgContent: function() {
+  resetMessageForm: function() {
     // border top & btm = (0.0625rem * 2) = 0.125rem
     // padding top & btm = (0.5rem * 2) = 1rem
     // inner-height = 1.25rem
@@ -51,8 +45,8 @@ App.messages = App.cable.subscriptions.create('MessagesChannel', {
     $msg.css("height", height);
   },
 
-  scrollMsgBottom: function(el) {
-    var val = el[0].scrollHeight - parseInt(el.css('height'), 10);
-    el.scrollTop(val);
+  scrollMessageBottom: function() {
+    var val = this.$messages[0].scrollHeight - parseInt(this.$messages.css('height'), 10);
+    this.$messages.scrollTop(val);
   }
 });
