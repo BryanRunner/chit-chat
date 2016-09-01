@@ -1,11 +1,16 @@
 function h(e) {
-  $(e).css({'height':'auto','overflow-y':'hidden'}).height(e.scrollHeight - 16);
+  // default padding for top and bottom is 1rem(16px)
+  var paddingDefault = 16;
+  $(e).css({'height':'auto','overflow-y':'hidden'}).height(e.scrollHeight - paddingDefault);
 }
 
 $(document).ready(function(){
 
   $('#new_message').keypress(function(e){
-    if(e.which == 13 && e.ctrlKey === false){
+    if (e.which == 13) {
+      e.preventDefault();
+    }
+    if(e.which == 13 && e.ctrlKey != true && $("#msg-form")[0].value != "") {
        e.preventDefault();
        $('#new_message').submit();
      }
@@ -13,18 +18,18 @@ $(document).ready(function(){
 
 
   $(document).on('keypress', function() {
-    var $input = $('#message_content');
+    var $input = $('#msg-form');
 
     if(!$input.is(':focus')) {
         $input.focus();
     }
   });
 
-  $('#message_content').on('input',function(e){
+  $('#msg-form').on('input',function(e){
     h(e.currentTarget);
 	});
 
-  $('#message_content').keypress(function(e){
+  $('#msg-form').keypress(function(e){
     if(e.which == 13 && e.ctrlKey === true){
       e.preventDefault();
       $(e.currentTarget)[0].value = $(e.currentTarget)[0].value + "\n";

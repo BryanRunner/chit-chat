@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "main";
 @import "chats";
+@import "messages";
 
 $primary-transparent: transparentize($brand-primary, 0.20);
 
@@ -22,14 +23,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: #fff;
-  // background-position: 0 100%;
-  // background-size: 100%;
   background-image: url('/images/crosses.png');
-  // background-repeat: no-repeat;
-  // @include media-breakpoint-up(md) {
-  //   background-position: bottom right;
-  //   background-size: auto;
-  // }
 }
 
 ul {
@@ -41,8 +35,6 @@ ul {
   position: relative;
   min-height: 100vh;
   background: darken($primary-transparent, 20%);
-  // -webkit-box-shadow: inset 0 0 6rem 1rem rgba(0,0,0,.20);
-  //         box-shadow: inset 0 0 6rem 1rem rgba(0,0,0,.20);
 }
 
 #bg-overlay {
@@ -77,12 +69,10 @@ ul {
 
 
 .main-cta {
-  // text-shadow: 0 .05rem .1rem rgba(50,50,50,.75);
   background: transparent;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  // height: calc(100vh - 6.25rem);
   border-radius: 0;
   margin-bottom: 0;
   padding-top: 10rem;

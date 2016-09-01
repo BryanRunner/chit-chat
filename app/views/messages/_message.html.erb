@@ -1,1 +1,8 @@
-<p><strong><%=message.user.username%></strong><br><%=message.content%></p>
+<div class="msg">
+  <p class="msg-user"><%= message.user.username %></p>
+  <p class="msg-content">
+    <% message.split_content.each do |line| %>
+      <span class="msg-line"><%= line %></span>
+    <% end %>
+  </p>
+</div>
