@@ -11,19 +11,26 @@
 .side-bar {
   @include make-col-ready(2, $gutter: 0);
   @include make-col(2, $gutter: 0);
+  display: none;
   background: #eee;
   color: #555;
   height: 100%;
   padding: 2rem 0 0 2rem;
   border-right: solid 1px #ddd;
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
 }
 
 .content {
-  @include make-col-ready(10, $gutter: 0);
-  @include make-col(10, $gutter: 0);
+  @include make-col-ready(12, $gutter: 0);
+  @include make-col(12, $gutter: 0);
   background: #fafafa;
   height: 100%;
   color: #555;
+  @include media-breakpoint-up(lg) {
+    @include make-col(10, $gutter: 0);
+  }
 }
 
 .wrap {
