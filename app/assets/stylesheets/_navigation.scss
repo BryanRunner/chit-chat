@@ -1,0 +1,82 @@
+.masthead {
+  background-color: transparent;
+  z-index: 50;
+  .inner {
+    height: 4rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0 1rem;
+    @include media-breakpoint-up(lg) {
+      padding: 0 2rem;
+      height: 6.25rem;
+    }
+  }
+}
+
+#nav-masthead {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background: #777;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  @include media-breakpoint-up(lg) {
+    position: relative;
+    height: auto;
+    width: auto;
+    display: block;
+    background: transparent;
+    margin-left: auto;
+  }
+  &.toggled {
+    display: flex;
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+  .nav-link {
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgba(255,255,255,.5);
+    background-color: transparent;
+    @include media-breakpoint-up(lg) {
+      margin-left: 1rem;
+    }
+    &.active {
+      color: #fff;
+    }
+  }
+}
+
+.masthead-brand {
+  width: 8rem;
+  margin-bottom: 0;
+  @include media-breakpoint-up(lg) {
+    height: auto;
+    width: auto;
+  }
+}
+
+#nav-open {
+  margin-left: auto;
+  color: #fff;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+#nav-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #fff;
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}

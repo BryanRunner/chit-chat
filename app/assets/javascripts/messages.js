@@ -6,9 +6,9 @@ App.ChatTrack.prototype = {
   constructor: App.ChatTrack,
 
   initialize: function() {
-    this.$msgInput = $("#msg-form");
-    this.$msgForm = $("#new_message");
-    this.$messages = $('#messages');
+    this.$msgInput      = $("#msg-form");
+    this.$msgForm       = $("#new_message");
+    this.$messages      = $('#messages');
     this.paddingDefault = parseInt(getComputedStyle(this.$msgInput[0], null)["paddingTop"], 10) * 2;
     this.listeners();
     this.scrollBottom();

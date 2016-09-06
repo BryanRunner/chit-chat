@@ -17,3 +17,7 @@
 //= require bootstrap
 //= require_tree .
 //= require_tree ./channels
+
+$(function(){
+  appNav = new App.Navigation();
+});

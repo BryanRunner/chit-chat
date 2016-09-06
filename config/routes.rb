@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
 
   authenticated :user do
-    root 'users#show', as: :authenticated_root
+    root 'chats#index', as: :authenticated_root
   end
 
   root 'main#index'
