@@ -29,6 +29,8 @@
   @include make-col(12, $gutter: 0);
   background: #fff;
   color: #555;
+  height: 100%;
+  // flex: 1;
   @include media-breakpoint-up(lg) {
     @include make-col(10, $gutter: 0);
   }
@@ -63,6 +65,7 @@
 .chat-wrap {
   height: 100%;
   display: flex;
+  flex: 1;
   flex-flow: column nowrap;
 }
 
