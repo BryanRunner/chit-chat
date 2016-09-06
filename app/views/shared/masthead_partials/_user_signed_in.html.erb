@@ -1,3 +1,3 @@
-<%= link_to "Accout", root_path, class: "nav-link #{ active?('users', 'show') }" %>
+<%= link_to "Accout", user_path(current_user), class: "nav-link #{ active?('users', 'show') }" %>
 <%= link_to "Chats", user_chats_path(current_user), class: "nav-link #{ active?('chats', action_name) }" %>
 <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"nav-link" %>

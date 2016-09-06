@@ -1,14 +1,26 @@
 <div class="masthead">
   <div class="inner">
+
     <%= link_to root_path do %>
       <img class="masthead-brand" src="/images/chit-chat-logo-white.svg" alt="" />
     <% end %>
-    <nav class="nav nav-masthead">
+
+    <nav id="nav-masthead" class="nav">
+
+      <a id="nav-close" href="#">
+        <i class="btl bt-times bt-lg"></i>
+      </a>
+
       <% if user_signed_in? %>
         <%= render "shared/masthead_partials/user_signed_in" %>
       <% else %>
         <%= render "shared/masthead_partials/user_signed_out" %>
       <% end %>
     </nav>
+
+    <a id="nav-open" href="#">
+      <i class="btl bt-bars bt-lg"></i>
+    </a>
+
   </div>
 </div>

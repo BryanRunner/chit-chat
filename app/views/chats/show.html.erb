@@ -12,8 +12,10 @@
   <%= render partial: 'messages/message_form', locals: { message: @message, chat: @chat } %>
 </div>
 
-<script type="text/javascript">
-  $(function(){
-    chat = new App.ChatTrack();
-  });
-</script>
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    $(function(){
+      chat = new App.ChatTrack();
+    });
+  </script>
+<% end %>
